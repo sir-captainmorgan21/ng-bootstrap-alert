@@ -1,0 +1,6 @@
+<div [ngClass]="alertPosition" class="bootstrap-alert col-lg-4">
+	<div *ngFor="let bootstrapAlert of bootstrapAlerts" id="{{bootstrapAlert.uuid}}" class="alert alert-dismissable mb-2" [ngClass]="bootstrapAlert.type" [@alertVisible]="bootstrapAlert.state">
+		<button type="button" class="close" data-dismiss="alert">x</button>
+		{{bootstrapAlert.message}}
+	</div>
+</div>

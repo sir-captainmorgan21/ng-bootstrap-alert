@@ -1,0 +1,38 @@
+.bootstrap-alert {
+	z-index: 2000;
+	position: fixed;
+}
+
+.top-left {
+	left: 1rem;
+	top: 1rem;
+}
+
+.top-center {
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 1rem;
+}
+
+.top-right {
+	right: 1rem;
+	top: 1rem;
+}
+
+.bottom-left {
+	left: 1rem;
+	bottom: 1rem;
+}
+
+.bottom-center {
+	margin: auto;
+	left: 0;
+	right: 0;
+	bottom: 1rem;
+}
+
+.bottom-right {
+	right: 1rem;
+	bottom: 1rem;
+}
