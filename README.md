@@ -41,9 +41,9 @@ import { BootstrapAlertService, BootstrapAlert } from 'ng-bootstrap-alert';
 
 ## Configuration
 The ```BootstrapAlert``` object offers three exposed configurations.
-* message - The message to be presented to the user
-* type - The type of message. See purpose of type [here](#alert-types)
-* timeoutInMilliseconds - How long the message will be displayed to the user before it fades away. Default timeout is 3000.
+* ```message``` The message to be presented to the user
+* ```type``` The type of message. See purpose of type [here](#alert-types)
+* ```timeoutInMilliseconds``` How long the message will be displayed to the user before it fades away. Default timeout is 3000.
 
 ### Alert Types
 The following message types are avialable. The typess below represent the Bootstrap [alert](https://v4-alpha.getbootstrap.com/components/alerts/) classes.
