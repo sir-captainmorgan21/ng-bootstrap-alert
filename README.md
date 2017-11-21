@@ -7,7 +7,7 @@ Provides alert messaging for your application. Message styling is driven by [Boo
 * [Setup](#setup)
 * [Configuration](#configuration)
     * [Alert Types](#alert-types)
-    * [Aler Position](#alert-position)
+    * [Alert Position](#alert-position)
 * [Usage Examples](#usage-examples)
 
 ## Demo
@@ -21,7 +21,7 @@ npm install ng-bootstrap-alert
 ## Setup
 Import ```BootstrapAlertModule``` into your ```app.module```.
 ```typescript
-import { BootstrapAlertModule } from './ng-bootstrap-alert/ng-bootstrap-alert';
+import { BootstrapAlertModule } from 'ng-bootstrap-alert';
 
 @NgModule({
   ...
@@ -36,7 +36,7 @@ Place the ```bootstrap-alert``` selector at the bottom of your app.component.htm
 ```
 Import ```BootstrapAlertService``` and ```BootstrapAlert``` into the component you want to intiate the alert.
 ```typescript
-import { BootstrapAlertService, BootstrapAlert } from './modules/ng-bootstrap-alert/ng-bootstrap-alert';
+import { BootstrapAlertService, BootstrapAlert } from 'ng-bootstrap-alert';
 ```
 
 ## Configuration
@@ -44,12 +44,14 @@ The ```BootstrapAlert``` object offers three exposed configurations.
 * message - The message to be presented to the user
 * type - The type of message. See purpose of type [here](#alert-types)
 * timeoutInMilliseconds - How long the message will be displayed to the user before it fades away. Default timeout is 3000.
+
 ### Alert Types
 The following message types are avialable. The typess below represent the Bootstrap [alert](https://v4-alpha.getbootstrap.com/components/alerts/) classes.
 * alert-success
 * alert-info
 * alert-warning
 * alert-danger
+
 ### Alert Position
 The following locations are available. Pass the location into the ```bootstrap-alert``` component selector like so:
 ```html

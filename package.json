@@ -1,6 +1,22 @@
 {
 	"name": "ng-bootstrap-alert",
 	"version": "1.0.1",
+	"keywords": [
+		"alert",
+		"bootstrap",
+		"package",
+		"angular2",
+		"angular",
+		"npm",
+		"error",
+		"formGroup",
+		"form",
+		"message"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sir-captainmorgan21/ng-bootstrap-alert"
+	},
 	"license": "MIT",
 	"scripts": {
 		"ng": "ng",
