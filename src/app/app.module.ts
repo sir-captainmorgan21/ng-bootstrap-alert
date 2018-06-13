@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { BootstrapAlertModule } from './modules/ng-bootstrap-alert/ng-bootstrap-alert';
+import { NgBootstrapAlertModule } from 'ng-bootstrap-alert';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { BootstrapAlertModule } from './modules/ng-bootstrap-alert/ng-bootstrap-
   ],
   imports: [
     BrowserModule,
-    BootstrapAlertModule
+    NgBootstrapAlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,12 @@
 import { Component, ElementRef, Input } from '@angular/core';
-import { BootstrapAlert, BootstrapAlertInterface } from './bootstrap-alert';
-import { BootstrapAlertService } from './bootstrap-alert.service';
+import { NgBootstrapAlert, NgBootstrapAlertInterface } from './ng-bootstrap-alert';
+import { NgBootstrapAlertService } from './ng-bootstrap-alert.service';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 
 @Component( {
-    selector: 'bootstrap-alert',
-    templateUrl: 'bootstrap-alert.component.html',
-    styleUrls: ['bootstrap-alert.component.css'],
+    selector: 'ng-bootstrap-alert',
+    templateUrl: 'ng-bootstrap-alert.component.html',
+    styleUrls: ['ng-bootstrap-alert.component.css'],
     animations: [
         trigger( 'alertVisible', [
             state( 'visible', style( { opacity: 1 } ) ),
@@ -17,17 +17,17 @@ import { trigger, state, transition, style, animate } from '@angular/animations'
     ]
 } )
 
-export class BootstrapAlertComponent {
+export class NgBootstrapAlertComponent {
 
     @Input() alertPosition: string;
 
-    bootstrapAlerts: Array<BootstrapAlertInterface>;
+    bootstrapAlerts: Array<NgBootstrapAlertInterface>;
 
-    constructor( private bootstrapAlertService: BootstrapAlertService ) {
+    constructor( private bootstrapAlertService: NgBootstrapAlertService ) {
 
         this.bootstrapAlerts = [];
         this.bootstrapAlertService._bootstrapAlert.subscribe(
-            ( bootstrapAlert: BootstrapAlertInterface ) => {
+            ( bootstrapAlert: NgBootstrapAlertInterface ) => {
                 this.show( bootstrapAlert );
             }
         );
@@ -37,39 +37,38 @@ export class BootstrapAlertComponent {
     readonly DEFAULT_TIMEOUT = 3000;
     readonly FADE_TIMEOUT = 600;
 
-    show( bootstrapAlert: BootstrapAlertInterface ): void {
-        if ( !bootstrapAlert )
+    show( bootstrapAlert: NgBootstrapAlertInterface ): void {
+        if ( !bootstrapAlert ) {
             return;
-
+        }
         this.bootstrapAlerts.unshift( bootstrapAlert );
-
         setTimeout(
             () => {
-                this.destroy( bootstrapAlert.uuid )
+                this.destroy( bootstrapAlert.uuid );
             }, bootstrapAlert.timeoutInMiliSeconds ? bootstrapAlert.timeoutInMiliSeconds : this.DEFAULT_TIMEOUT
-        )
+        );
     }
-    
+
     fade( bootstrapAlert): void {
         bootstrapAlert.state = 'destroyed';
     }
 
     destroy( uuid: string ): void {
-        let bootstrapAlertIndex = this.findIndex( this.bootstrapAlerts, 'uuid', uuid );
+        const bootstrapAlertIndex = this.findIndex( this.bootstrapAlerts, 'uuid', uuid );
         if ( bootstrapAlertIndex !== -1 ) {
-            let bootstrapAlert = this.bootstrapAlerts[bootstrapAlertIndex];
+            const bootstrapAlert = this.bootstrapAlerts[bootstrapAlertIndex];
             bootstrapAlert.state = 'destroyed';
             setTimeout(
-            () => {
-                this.bootstrapAlerts.splice( bootstrapAlertIndex, 1 );
-            }, this.FADE_TIMEOUT
-            )
+              () => {
+                  this.bootstrapAlerts.splice( bootstrapAlertIndex, 1 );
+              }, this.FADE_TIMEOUT
+            );
         }
     }
-    
+
     findIndex(array, attr, value): number {
-        for(var i = 0; i < array.length; i += 1) {
-            if(array[i][attr] === value) {
+        for (let i = 0; i < array.length; i += 1) {
+            if (array[i][attr] === value) {
                 return i;
             }
         }

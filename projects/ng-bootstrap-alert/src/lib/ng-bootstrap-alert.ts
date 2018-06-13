@@ -1,4 +1,4 @@
-export interface BootstrapAlertInterface {
+export interface NgBootstrapAlertInterface {
     message: string;
     timeoutInMiliSeconds: number;
     type: AlertType;
@@ -6,9 +6,9 @@ export interface BootstrapAlertInterface {
     state: string;
 }
 
-export type AlertType = "alert-danger" | "alert-success" | "alert-info" | "alert-warning";
+export type AlertType = 'alert-danger' | 'alert-success' | 'alert-info' | 'alert-warning';
 
-export class BootstrapAlert implements BootstrapAlertInterface {
+export class NgBootstrapAlert implements NgBootstrapAlertInterface {
     private _message: string;
     private _timeoutInMiliSeconds: number;
     private _type: AlertType;

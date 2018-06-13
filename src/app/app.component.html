@@ -1,26 +1,6 @@
-<div class="row container-main justify-content-center">
-	<div class="col-lg-6 mt-5">
-		<div class="card">
-			<div class="card-header">ng-bootstrap-alert</div>
-			<div class="card-block">
-				<div class="row">
-					<div class="col-lg-4 text-center"><button (click)="alert('tl')" class="btn btn-primary">TOP LEFT</button></div>
-					<div class="col-lg-4 text-center"><button (click)="alert('tc')" class="btn btn-primary">TOP CENTER</button></div>
-					<div class="col-lg-4 text-center"><button (click)="alert('tr')" class="btn btn-primary">TOP RIGHT</button></div>
-				</div>
-				<div class="row mt-3">
-					<div class="col-lg-4 text-center"><button (click)="alert('bl')" class="btn btn-primary">BOTTOM LEFT</button></div>
-					<div class="col-lg-4 text-center"><button (click)="alert('bc')" class="btn btn-primary">BOTTOM CENTER</button></div>
-					<div class="col-lg-4 text-center"><button (click)="alert('br')" class="btn btn-primary">BOTTOM RIGHT</button></div>
-				</div>
-			</div>
-			<div class="card-footer text-center text-muted">powered by sir-captainmorgan21</div>
-		</div>
-	</div>
+<div class="row">
+  <div class="col-sm-12">
+    <button class="btn btn-primary" (click)="showAlert()">Show Alert!</button>
+  </div>
 </div>
-<bootstrap-alert *ngIf="position == 'tl'" alertPosition="top-left"></bootstrap-alert>
-<bootstrap-alert *ngIf="position == 'tc'" alertPosition="top-center"></bootstrap-alert>
-<bootstrap-alert *ngIf="position == 'tr'" alertPosition="top-right"></bootstrap-alert>
-<bootstrap-alert *ngIf="position == 'bl'" alertPosition="bottom-left"></bootstrap-alert>
-<bootstrap-alert *ngIf="position == 'bc'" alertPosition="bottom-center"></bootstrap-alert>
-<bootstrap-alert *ngIf="position == 'br'" alertPosition="bottom-right"></bootstrap-alert>
+<ng-bootstrap-alert alertPosition="top-center"></ng-bootstrap-alert>
